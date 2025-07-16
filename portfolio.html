@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio de Shara</title>
+  <link rel="stylesheet" href="./portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>🌸 Shara</h2>
+    <nav>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+  
+  <main>
+    <section class="hero-banner">
+      <!-- Animação de folhas de sakura -->
+      <div class="sakura-container"></div>
+
+      <div class="hero-text">
+        <h1>Oi, eu sou Shara</h1>
+        <h2>Desenvolvedora Fullstack</h2>
+        <p>Criando experiências web criativas, modernas e funcionais ✨</p>
+        <a href="#contato" class="hero-btn">Entre em contato</a>
+      </div>
+
+      <div class="hero-img">
+        <img src="./img/df82ab2d-2e7e-4c17-9db4-33e653ced865.png" alt="Desenvolvedora fullstack">
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <h1>Sobre Mim</h1>
+      <p>Sou uma desenvolvedora apaixonada por interfaces criativas e tecnologia. Gosto de unir design com funcionalidade, criando experiências únicas inspiradas em jogos modernos e cultura asiática.</p>
+    </section>
+
+    <section id="projetos" class="section">
+      <h1>Meus Projetos</h1>
+      <div class="carousel-wrapper">
+        <button class="nav-btn left" onclick="scrollCarousel(-1)">◀</button>
+        <div class="carousel" id="carousel">
+          <div class="card left">
+            <img src="./img/projeto1.jpg" />
+            <p class="title">Projeto 1</p>
+          </div>
+
+          <div class="card active">
+            <img src="./img/projeto2.jpg" />
+            <p class="title">Projeto Destaque</p>
+            <button class="enter-btn">ENTER</button>
+          </div>
+
+          <div class="card right">
+            <img src="./img/projeto3.jpg" />
+            <p class="title">Projeto 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <h1>Contato</h1>
+      <p>Você pode me encontrar pelo e-mail: <strong>shara@exemplo.com</strong></p>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <h2 id="modalTitle">Título</h2>
+      <p id="modalDesc">Descrição</p>
+    </div>
+  </div>
+
+  <script src="./portfolio.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Sakura animation
+    const sakuraContainer = document.querySelector('.sakura-container');
+    function createSakura() {
+      const sakura = document.createElement('div');
+      sakura.classList.add('sakura');
+      sakura.style.left = Math.random() * 100 + 'vw';
+      sakura.style.animationDuration = (5 + Math.random() * 5) + 's';
+      sakuraContainer.appendChild(sakura);
+      setTimeout(() => sakura.remove(), 10000);
+    }
+    setInterval(createSakura, 300);
+  </script>
+</body>
+</html>

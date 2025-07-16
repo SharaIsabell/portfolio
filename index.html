@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio de Shara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    body {
+      background: radial-gradient(circle, #1a1a40 0%, #0a0a23 100%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    #intro-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .computer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .monitor {
+      width: 720px;
+      height: 440px;
+      background: #1e1e2f;
+      border: 22px solid #0ff;
+      border-top-width: 30px;
+      border-radius: 28px 28px 12px 12px;
+      box-shadow:
+        inset 0 0 80px rgba(0,255,255,0.15),
+        0 0 60px #ff00ff99,
+        0 25px 50px #000b,
+        0 -5px 10px #ff66cc55,
+        inset 0 -4px 40px rgba(255,255,255,0.05);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-image:
+        radial-gradient(ellipse at center, rgba(0,255,255,0.08) 0%, transparent 70%),
+        linear-gradient(to bottom, #2b2b45, #1b1b2d);
+    }
+
+    .power-button {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #ff66cc, #aa0088);
+      box-shadow: 0 0 10px #ff00ff88;
+      border: 2px solid white;
+    }
+
+    .screen {
+      position: relative;
+      z-index: 3;
+      width: 92%;
+      height: 86%;
+      background: #000;
+      border-radius: 10px;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .base {
+      width: 200px;
+      height: 28px;
+      background: #2a2a2a;
+      margin-top: -8px;
+      border-radius: 10px;
+      box-shadow: inset 0 -2px 5px #0006;
+    }
+
+    .keyboard {
+      width: 650px;
+      background: linear-gradient(to top, #2e2e5e, #1a1a3a);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: inset 0 0 30px #0ff4, 0 10px 30px #0009;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .key-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .key, .spacebar {
+      width: 36px;
+      height: 36px;
+      background: #333366;
+      border-radius: 6px;
+      box-shadow: inset 0 0 10px #ff00ff55;
+      transition: transform 0.1s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8em;
+    }
+
+    .key:hover, .spacebar:hover {
+      transform: scale(1.1);
+      background-color: #ff66cc;
+      cursor: pointer;
+    }
+
+    .spacebar {
+      width: 360px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      box-shadow: inset 0 0 10px #0ff, 0 0 15px #ff00ff88;
+    }
+
+    .spacebar:hover {
+      background: linear-gradient(to right, #0ff, #ff00ff);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <section id="intro-screen">
+    <div class="computer">
+      <div class="monitor">
+        <div class="screen">
+          <iframe src="portfolio.html"></iframe>
+        </div>
+        <div class="power-button"></div>
+      </div>
+      <div class="base"></div>
+      <div class="keyboard">
+        <div class="key-row">
+          <div class="key">Esc</div><div class="key">F1</div><div class="key">F2</div><div class="key">F3</div><div class="key">F4</div>
+          <div class="key">F5</div><div class="key">F6</div><div class="key">F7</div><div class="key">F8</div><div class="key">F9</div><div class="key">F10</div><div class="key">F11</div><div class="key">F12</div>
+        </div>
+        <div class="key-row">
+          <div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div><div class="key">T</div>
+          <div class="key">Y</div><div class="key">U</div><div class="key">I</div><div class="key">O</div><div class="key">P</div><div class="key">[</div><div class="key">]</div><div class="key">\</div>
+        </div>
+        <div class="key-row">
+          <div class="key">A</div><div class="key">S</div><div class="key">D</div><div class="key">F</div><div class="key">G</div>
+          <div class="key">H</div><div class="key">J</div><div class="key">K</div><div class="key">L</div><div class="key">;</div><div class="key">'</div>
+        </div>
+        <div class="key-row">
+          <div class="key">Z</div><div class="key">X</div><div class="key">C</div><div class="key">V</div><div class="key">B</div>
+          <div class="key">N</div><div class="key">M</div><div class="key">,</div><div class="key">.</div><div class="key">/</div><div class="key">Shift</div>
+        </div>
+        <div class="key-row">
+          <div class="key">Ctrl</div><div class="key">Alt</div><button class="spacebar" id="enter-btn">Enter</button><div class="key">Alt</div><div class="key">Ctrl</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": ["#0ff", "#ff00ff", "#ff66cc"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+
+    const button = document.getElementById('enter-btn');
+    button.addEventListener('click', () => {
+      window.location.href = 'portfolio.html';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        window.location.href = 'portfolio.html';
+      }
+    });
+  </script>
+</body>
+</html>
