@@ -11,7 +11,11 @@
 <body>
 
   <div class="sidebar">
-    <h2>🌸 Shara</h2>
+    <div class="logo-container">
+      <div class="logo-icon">🌸</div>
+      <div class="logo-text">Shara</div>
+    </div>  
+
     <nav>
       <a href="#sobre">Sobre Mim</a>
       <a href="#projetos">Projetos</a>
@@ -37,8 +41,44 @@
     </section>
 
     <section id="sobre" class="section">
-      <h1>Sobre Mim</h1>
-      <p>Sou uma desenvolvedora apaixonada por interfaces criativas e tecnologia. Gosto de unir design com funcionalidade, criando experiências únicas inspiradas em jogos modernos e cultura asiática.</p>
+      <div class="sobre-container">
+        <div class="sobre-header">
+          <h1>Sobre Mim</h1>
+          <h2 class="sub">Desenvolvedora Fullstack</h2>
+          <p>
+            🎓 Graduando em Ciência da Computação pela UEPB<br>
+            💡 Interesse em Neurociência Computacional, Inteligência Artificial e Desenvolvimento Web<br>
+            🧠 Membro do <a href="https://www.instagram.com/neuro_comp/" target="_blank">Grupo de Pesquisa em Neurociência Computacional</a><br>
+            📍 Campina Grande, PB
+          </p>
+        </div>
+        <div class="pixel-art"></div>
+      </div>
+      <div class="tecnologias">
+        <h3>🤖 Tecnologias</h3>
+        <div class="tags">
+          <button class="tag" data-uso="Linguagem de marcação para estruturação de páginas web.">HTML5</button>
+          <button class="tag" data-uso="Estilização de elementos HTML.">CSS3</button>
+          <button class="tag" data-uso="Linguagem de programação para comportamentos dinâmicos.">JavaScript</button>
+          <button class="tag" data-uso="Template engine para Node.js.">EJS</button>
+          <button class="tag" data-uso="Ferramenta para design de interfaces.">Figma</button>
+
+          <button class="tag" data-uso="Ambiente de execução backend em JavaScript.">Node.js</button>
+          <button class="tag" data-uso="Framework minimalista para servidores web.">Express.js</button>
+          <button class="tag" data-uso="Linguagem versátil para scripts e IA.">Python</button>
+          <button class="tag" data-uso="Linguagem de programação orientada a objetos.">Java</button>
+
+          <button class="tag" data-uso="Sistema de gerenciamento de banco de dados relacional.">MySQL</button>
+          <button class="tag" data-uso="Banco de dados relacional avançado.">PostgreSQL</button>
+
+          <button class="tag" data-uso="Controle de versão e colaboração.">Git</button>
+          <button class="tag" data-uso="Hospedagem de código e versionamento.">GitHub</button>
+
+          <button class="tag" data-uso="Criação de pixel art e sprites para jogos.">Aseprite</button>
+        </div>
+        <div id="descricao-tecnologia">Clique em alguma tecnologia para saber mais</div>
+      </div>
+
     </section>
 
     <section id="projetos" class="section">
@@ -95,6 +135,18 @@
       setTimeout(() => sakura.remove(), 10000);
     }
     setInterval(createSakura, 300);
+  </script>
+
+  <script>
+    const tags = document.querySelectorAll('.tag');
+    const descricao = document.getElementById('descricao-tecnologia');
+
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        descricao.textContent = tag.dataset.uso;
+        descricao.classList.add('mostrar');
+      });
+    });
   </script>
 </body>
 </html>
