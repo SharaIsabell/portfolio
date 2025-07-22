@@ -84,26 +84,34 @@
     <section id="projetos" class="section">
       <h1>Meus Projetos</h1>
       <div class="carousel-wrapper">
-        <button class="nav-btn left" onclick="scrollCarousel(-1)">◀</button>
-        <div class="carousel" id="carousel">
-          <div class="card left">
-            <img src="./img/projeto1.jpg" />
-            <p class="title">Projeto 1</p>
+          <button id="prevBtn" class="nav-btn">◀</button>
+          <div class="carousel">
+              <div class="card" data-project-title="Visualizador de Algoritmos" data-project-desc="Uma ferramenta interativa para visualizar algoritmos de ordenação e busca. Construído com React e D3.js.">
+                  <img src="./img/projeto1.png" alt="Projeto 1">
+                  <div class="card-title"><span>Visualizador de Algoritmos</span></div>
+              </div>
+              <div class="card" data-project-title="E-commerce de Games" data-project-desc="Plataforma de e-commerce completa com tema de jogos, incluindo carrinho de compras, checkout e painel de admin.">
+                  <img src="./img/projeto2.jpg" alt="Projeto 2">
+                  <div class="card-title"><span>E-commerce de Games</span></div>
+              </div>
+              <div class="card" data-project-title="App de Chat em Tempo Real" data-project-desc="Aplicação de chat em tempo real utilizando WebSockets com Node.js e Express, permitindo conversas instantâneas.">
+                  <img src="./img/projeto3.jpg" alt="Projeto 3">
+                  <div class="card-title"><span>Chat em Tempo Real</span></div>
+              </div>
+              <div class="card" data-project-title="Blog Pessoal com CMS" data-project-desc="Um blog pessoal com um sistema de gerenciamento de conteúdo customizado para criar e editar posts.">
+                  <img src="./img/projeto4.jpg" alt="Projeto 4">
+                  <div class="card-title"><span>Blog com CMS</span></div>
+              </div>
+            
           </div>
-
-          <div class="card active">
-            <img src="./img/projeto2.jpg" />
-            <p class="title">Projeto Destaque</p>
-            <button class="enter-btn">ENTER</button>
-          </div>
-
-          <div class="card right">
-            <img src="./img/projeto3.jpg" />
-            <p class="title">Projeto 3</p>
-          </div>
-        </div>
+          <button id="nextBtn" class="nav-btn">▶</button>
       </div>
-    </section>
+      <div class="project-info">
+          <h2 id="project-title">Selecione um Projeto</h2>
+          <p id="project-description">Passe o mouse sobre um card e clique para ver os detalhes.</p>
+          <button class="enter-btn" style="display: none;">Ver Projeto</button>
+      </div>
+  </section>
 
     <section id="contato" class="section">
       <h1>Contato</h1>

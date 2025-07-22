@@ -1,33 +1,53 @@
-const carousel = document.getElementById('carousel');
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const cards = document.querySelectorAll('.card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    const projectTitle = document.getElementById('project-title');
+    const projectDesc = document.getElementById('project-description');
+    const enterButton = document.querySelector('.project-info .enter-btn');
 
-function scrollCarousel(direction) {
-  const cards = Array.from(carousel.querySelectorAll('.card'));
-  
-  if (direction > 0) {
-    const first = cards.shift();
-    carousel.appendChild(first);
-  } else {
-    const last = cards.pop();
-    carousel.insertBefore(last, cards[0]);
-  }
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    const angle = 360 / totalCards;
 
-  updateClasses();
-}
+    function updateCarousel() {
+        const rotateY = -currentIndex * angle;
+        carousel.style.transform = `rotateY(${rotateY}deg)`;
 
-function updateClasses() {
-  const cards = Array.from(carousel.querySelectorAll('.card'));
-  cards.forEach(c => c.className = 'card'); // remove todas as classes extras
+        cards.forEach((card, index) => {
+            const cardAngle = index * angle;
+            const diff = Math.abs(currentIndex - index);
 
-  if (cards.length >= 3) {
-    cards[0].classList.add('left');
-    cards[1].classList.add('active');
-    cards[2].classList.add('right');
-  } else if (cards.length === 2) {
-    cards[0].classList.add('active');
-    cards[1].classList.add('right');
-  } else if (cards.length === 1) {
-    cards[0].classList.add('active');
-  }
-}
+            // Posiciona os cards em um círculo 3D
+            const cardRotateY = cardAngle;
+            const translateZ = 350; // Distância do centro
+            card.style.transform = `rotateY(${cardRotateY}deg) translateZ(${translateZ}px)`;
 
-window.addEventListener('load', updateClasses);
+            if (index === currentIndex) {
+                card.classList.add('active');
+                card.style.opacity = '1';
+                projectTitle.textContent = card.dataset.projectTitle;
+                projectDesc.textContent = card.dataset.projectDesc;
+                enterButton.style.display = 'inline-block';
+            } else {
+                card.classList.remove('active');
+                card.style.opacity = '0.4'; // Deixa os outros cards mais escuros
+            }
+        });
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateCarousel();
+    });
+
+    // Inicializa o carrossel na posição correta
+    updateCarousel();
+});
