@@ -290,24 +290,49 @@ main {
   margin-bottom: 20px;
 }
 
+.formulario-contato {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+  padding: 12px 16px;
+  background: #1a1a2f;
+  border: 1px solid #00fff7;
+  color: white;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1em;
+}
+
+.formulario-contato input::placeholder,
+.formulario-contato textarea::placeholder {
+  color: #aaa;
+}
+
+.formulario-contato button {
+  align-self: flex-start;
+}
+
+
 .section p {
   font-size: 1em;
   color: #e0e0e0;
   line-height: 1.5;
 }
 
-/* =================================== */
-/* NOVA SEÇÃO DE CARROSSEL 3D         */
-/* =================================== */
-
 #projetos {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* <- alterado de center para flex-start */
-  justify-content: flex-start; /* <- opcional para melhor alinhamento */
+  align-items: flex-start; 
+  justify-content: flex-start;
   min-height: 100vh;
-  padding: 60px 40px 70px 40px; /* adiciona padding horizontal */
-  gap: 40px; /* espaço entre o título e o carrossel */
+  padding: 60px 40px 70px 40px; 
+  gap: 40px; 
 }
 
 .carousel-wrapper {

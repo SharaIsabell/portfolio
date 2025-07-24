@@ -114,10 +114,22 @@
   </section>
 
     <section id="contato" class="section">
-      <h1>Contato</h1>
-      <p>Você pode me encontrar pelo e-mail: <strong>shara@exemplo.com</strong></p>
-    </section>
-  </main>
+    <h1>Contato</h1>
+    <div class="contato">
+      <a href="https://github.com/SharaIsabell" target="_blank"><i data-lucide="github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/shara-isabell-303968256/" target="_blank"><i data-lucide="linkedin"></i> LinkedIn</a>
+      <a href="mailto:isabeloliveira425@gmail.com"><i data-lucide="mail"></i> isabeloliveira425@gmail.com</a>
+    </div>
+
+    <form class="formulario-contato" action="https://formsubmit.co/isabeloliveira425@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem..." required></textarea>
+      <button type="submit" class="hero-btn">Enviar Mensagem</button>
+    </form>
+  </section>
+
 
   <!-- MODAL -->
   <div class="modal" id="modal">
