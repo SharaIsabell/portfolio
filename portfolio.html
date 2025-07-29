@@ -10,20 +10,32 @@
 </head>
 <body>
 
-  <div class="sidebar">
-    <div class="logo-container">
-      <div class="logo-icon">🌸</div>
-      <div class="logo-text">Shara</div>
-    </div>  
-
-    <nav>
-      <a href="#sobre">Sobre Mim</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+ <div class="sidebar">
+  <div class="logo-container">
+    <div class="logo-text">Shara</div>
   </div>
+
+  <nav>
+    <a href="#sobre"><i data-lucide="user-round"></i><span>Sobre Mim</span></a>
+    <a href="#projetos"><i data-lucide="kanban-square"></i><span>Projetos</span></a>
+    <a href="#contato"><i data-lucide="mail"></i><span>Contato</span></a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round">
+          <i data-lucide="sun"></i>
+          <i data-lucide="moon"></i>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
   
   <main>
+    <div class="content">
     <section class="hero-banner">
       <!-- Animação de folhas de sakura -->
       <div class="sakura-container"></div>
@@ -129,7 +141,7 @@
       <button type="submit" class="hero-btn">Enviar Mensagem</button>
     </form>
   </section>
-
+  </div> </main>
 
   <!-- MODAL -->
   <div class="modal" id="modal">
@@ -167,6 +179,36 @@
         descricao.classList.add('mostrar');
       });
     });
+  </script>
+  <script>
+    // Script de alternância de tema
+    const themeSwitch = document.getElementById('checkbox');
+    const currentTheme = localStorage.getItem('theme');
+
+    function setTheme(theme) {
+      document.body.classList.toggle('light-mode', theme === 'light');
+      themeSwitch.checked = theme === 'light';
+      localStorage.setItem('theme', theme);
+    }
+
+    if (currentTheme) {
+      setTheme(currentTheme);
+    } else {
+      // Define o modo escuro como padrão se nenhuma preferência for encontrada
+      setTheme('dark');
+    }
+
+    themeSwitch.addEventListener('change', function(e) {
+      if(e.target.checked) {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    // Outros scripts existentes...
+    lucide.createIcons();
+    // ... (o resto do seu script)
   </script>
 </body>
 </html>
